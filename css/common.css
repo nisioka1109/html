@@ -103,7 +103,6 @@ img {
   height: 50vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  color: #A98058;
   line-height: 1.5rem;
   position: relative;
 }
@@ -325,7 +324,7 @@ img {
   height: 300px;
   top: 100px;
   right: 0;
-  z-index: 9999;
+  z-index: 9998;
 }
 .floating_line {
   position: absolute;

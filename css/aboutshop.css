@@ -186,10 +186,14 @@ img {
 .owner {
   height: 70vh;
   position: relative;
-  width: 100%;
+  width: 80%;
   max-width: 1000px;
+  min-width: 300px;
   display: block;
   margin: 400px auto 0;
+}
+.owner_img {
+  display: none;
 }
 .owner_text {
   background: url(../images/illust1.png) no-repeat right bottom/50%;
@@ -228,6 +232,36 @@ img {
   margin-top: 50px;
 }
 
+@media (max-width: 750px) {
+  .owner {
+    width: 60%;
+  }
+  .owner_img {
+    display: block;
+    margin: 30px 0;
+    text-align: center;
+  }
+  .owner_text {
+    background: none;
+  }
+  .owner_text_name {
+    font-size: 40px;
+  }
+  .owner_text_name::before {
+    margin-bottom: 10px;
+  }
+  .owner_text_maintext {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .owner {
+    width: 50%;
+  }
+  .owner_text_name {
+    font-size: 30px;
+  }
+}
 .other {
   height: 60vh;
   width: 70%;
@@ -239,10 +273,13 @@ img {
   justify-content: center;
   text-align: center;
 }
+.other_designer {
+  min-width: 200px;
+}
 .other_designer_name {
   font-size: 30px;
-  padding: 20px;
   position: relative;
+  padding: 20px;
 }
 .other_designer_name::after {
   content: "デザイナー / 歴２年";
@@ -252,10 +289,13 @@ img {
   bottom: -15px;
   right: 30px;
 }
+.other_camera {
+  min-width: 200px;
+}
 .other_camera_name {
   font-size: 30px;
-  padding: 20px;
   position: relative;
+  padding: 20px;
 }
 .other_camera_name::after {
   content: "デザイナー / 歴２年";
@@ -266,6 +306,30 @@ img {
   right: 30px;
 }
 
+@media (max-width: 750px) {
+  .other {
+    margin-top: 300px;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+  .other_designer_name {
+    font-size: 16px;
+  }
+  .other_designer::after {
+    font-size: 10px;
+  }
+  .other_camera_name {
+    font-size: 16px;
+  }
+  .other_camera::after {
+    font-size: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .other {
+    margin-top: 200px;
+  }
+}
 .goods {
   max-width: 1200px;
   width: 80%;
@@ -293,7 +357,31 @@ img {
 .goods_name {
   margin-top: 20px;
 }
+.goods_notice {
+  text-align: right;
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
 
+@media (max-width: 800px) {
+  .goods {
+    margin-top: 100px;
+  }
+  .goods_column {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .goods_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .goods_item img {
+    order: 1;
+  }
+  .goods_item span {
+    align-self: end;
+  }
+}
 .events {
   max-width: 1200px;
   width: 80%;
@@ -354,8 +442,7 @@ img {
   margin-top: 20px;
 }
 .access_map {
-  background: url(../images/map.jpg) no-repeat center center/cover;
-  margin-right: 100px;
+  margin-right: 50px;
 }
 .access_map_logo {
   display: grid;
@@ -367,6 +454,19 @@ img {
   margin: 5px 10px;
 }
 
+@media (max-width: 1000px) {
+  .access {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .access_main {
+    grid-template-columns: 1fr;
+  }
+  .access_map h2 {
+    text-align: center;
+    width: 400px;
+  }
+}
 .btn {
   position: relative;
   display: inline-flex;

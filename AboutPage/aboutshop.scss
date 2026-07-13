@@ -270,10 +270,15 @@ img {
 .owner {
     height: 70vh; //高さ指定
     position: relative;
-    width: 100%;
+    width: 80%;
     max-width: 1000px;
+    min-width: 300px;
     display: block;
     margin: 400px auto 0;
+
+    &_img {
+        display: none;
+    }
 
     &_text {
         //________左側のテキストの部分全体
@@ -325,6 +330,47 @@ img {
     }
 }
 
+@media(max-width:750px) {
+    .owner {
+        width: 60%;
+
+        &_img {
+            display: block;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        &_text {
+            background: none;
+
+            &_name {
+                font-size: 40px;
+
+                &::before {
+                    margin-bottom: 10px;
+                }
+            }
+
+            &_maintext {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media(max-width:600px) {
+    .owner {
+        width: 50%;
+
+        &_text {
+            &_name {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
 .other {
     //_________その他、カメラマン、デザイナーの部分
     height: 60vh;
@@ -337,12 +383,14 @@ img {
     text-align: center;
 
     &_designer {
+        min-width: 200px;
 
         //////______________デザイナー
         &_name {
             font-size: 30px;
-            padding: 20px;
             position: relative;
+            padding: 20px;
+
 
             &::after {
                 //__________経歴部分
@@ -360,12 +408,13 @@ img {
     }
 
     &_camera {
+        min-width: 200px;
 
         //_____________カメラマン
         &_name {
             font-size: 30px;
-            padding: 20px;
             position: relative;
+            padding: 20px;
 
             &::after {
                 ///_____________経歴部分
@@ -379,6 +428,39 @@ img {
             }
         }
 
+    }
+}
+
+@media(max-width:750px) {
+    .other {
+        margin-top: 300px;
+        column-gap: 0;
+
+        &_designer {
+            &_name {
+                font-size: 16px;
+            }
+
+            &::after {
+                font-size: 10px;
+            }
+        }
+
+        &_camera {
+            &_name {
+                font-size: 16px;
+            }
+
+            &::after {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media(max-width:600px) {
+    .other {
+        margin-top: 200px;
     }
 }
 
@@ -417,6 +499,36 @@ img {
     &_name {
         ////__________グッズの名前
         margin-top: 20px;
+    }
+
+    &_notice {
+        text-align: right;
+        margin-top: 30px;
+        letter-spacing: 1px;
+    }
+}
+
+@media(max-width:800px) {
+    .goods {
+        margin-top: 100px;
+
+        &_column {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+
+        &_item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            img {
+                order: 1;
+            }
+
+            span {
+                align-self: end;
+            }
+        }
     }
 }
 
@@ -497,8 +609,7 @@ img {
     }
 
     &_map {
-        background: url(../images/map.jpg)no-repeat center center/cover;
-        margin-right: 100px;
+        margin-right: 50px;
 
         &_logo {
             display: grid;
@@ -513,6 +624,24 @@ img {
     }
 }
 
+@media(max-width:1000px) {
+    .access {
+        width: 400px;
+        margin: 0 auto;
+
+        &_main {
+            grid-template-columns: 1fr;
+        }
+
+        &_map {
+            h2 {
+                text-align: center;
+                width: 400px;
+            }
+        }
+
+    }
+}
 
 .btn {
     position: relative;
