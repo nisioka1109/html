@@ -1,0 +1,356 @@
+@charset "UTF-8";
+body {
+  background-color: #FFF7E8;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 2em;
+  letter-spacing: 0.2rem;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  padding: 2%;
+}
+
+.bg-logo {
+  /* ///背景のたくさんのイラスト */
+  position: fixed;
+  width: 80px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: -1;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.subtitle {
+  color: #A98058;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  z-index: 999;
+}
+.btn_text {
+  color: #2d1d16;
+}
+.btn_line {
+  position: absolute;
+  background: #2d1d16;
+  transition: 0.4s ease;
+}
+.btn_top {
+  width: 150px;
+  height: 1px;
+  top: 20px;
+  left: 20px;
+}
+.btn_right {
+  width: 1px;
+  height: 40px;
+  bottom: 0;
+  right: 40px;
+}
+.btn_bottom {
+  width: 150px;
+  height: 1px;
+  bottom: 20px;
+  right: 20px;
+}
+.btn_left {
+  width: 1px;
+  height: 40px;
+  top: 0;
+  left: 40px;
+}
+
+.btn:hover .btn_top {
+  transform: translateX(20px);
+  width: 220px;
+}
+
+.btn:hover .btn_left {
+  transform: translateY(20px);
+  height: 60px;
+}
+
+.btn:hover .btn_bottom {
+  transform: translateX(-20px);
+  width: 220px;
+}
+
+.btn:hover .btn_right {
+  transform: translateY(-20px);
+  height: 60px;
+}
+
+/* //__________________________footer共有CSS__________________________ */
+.footer {
+  max-width: 1500px;
+  width: 95%;
+  margin: 30vh auto 0;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: #A98058;
+  line-height: 1.5rem;
+  position: relative;
+}
+.footer_logo {
+  padding: 0 10%;
+}
+.footer_logo img {
+  scale: 0.5;
+}
+.footer_menu {
+  padding: 0 20%;
+  position: relative;
+}
+.footer_menu ul {
+  display: grid;
+  row-gap: 50px;
+}
+.footer_menu::before {
+  content: "";
+  display: block;
+  max-height: 300px;
+  height: 100%;
+  width: 1px;
+  border: solid 0.5px #A98058;
+  position: absolute;
+  left: 0;
+  top: -50px;
+}
+.footer_menu::after {
+  content: "";
+  display: block;
+  max-height: 300px;
+  height: 100%;
+  width: 1px;
+  border: solid 0.5px #A98058;
+  position: absolute;
+  right: 10%;
+  top: -25px;
+}
+.footer_other {
+  padding: 0 10%;
+}
+.footer_other p {
+  margin: 30px 0;
+}
+.footer_other_link {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin: 20px 0 40px;
+}
+.footer_other_link a::after {
+  content: "";
+  display: none;
+}
+.footer_copy {
+  color: #A98058;
+  text-align: center;
+}
+.footer a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+  /* // ロゴ */
+}
+.footer a::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  right: -15px;
+  background: url("../images/leg.png") center/contain no-repeat;
+  opacity: 0;
+  rotate: 45deg;
+  transform: scale(0) rotate(-20deg);
+  transition: 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.footer a:hover {
+  color: #ECB880;
+}
+.footer a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.footer a:hover::after {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* //_________________________________humbarger__________________________________ */
+.hamburger {
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  right: 30px;
+  top: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.hamburger span {
+  width: 50px;
+  height: 2px;
+  background: #b58b67;
+  transition: all 0.4s ease;
+}
+.hamburger p {
+  font-size: 20px;
+  color: #b58b67;
+}
+
+/* 上の線 */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(14px) rotate(45deg);
+}
+
+/* 真ん中の線 */
+.hamburger.active span:nth-child(2) {
+  transform: translateX(100px);
+}
+
+/* 下の線 */
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-14px) rotate(-45deg);
+}
+
+@media (max-width: 2000px) {
+  .hamburger {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .hamburger {
+    display: flex;
+  }
+}
+/* //_______________________________header共有css_____________________________________ */
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2%;
+  display: grid;
+  justify-content: center;
+  z-index: 9997;
+}
+.header h1 {
+  width: 60px;
+}
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
+}
+.header li {
+  list-style: none;
+}
+.header a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+  font-size: 20px;
+  /* // ボーダー */
+  /* // ロゴ */
+}
+.header a::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-bottom: 2px solid #ECB880;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.header a::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  right: -15px;
+  background: url("../images/leg.png") center/contain no-repeat;
+  opacity: 0;
+  rotate: 45deg;
+  transform: scale(0) rotate(-20deg);
+  transition: 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+.header a:hover {
+  color: #ECB880;
+}
+.header a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.header a:hover::after {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: none;
+  }
+}
+.floating {
+  position: fixed;
+  width: 200px;
+  height: 300px;
+  top: 100px;
+  right: 0;
+  z-index: 9999;
+}
+.floating_line {
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  z-index: 99;
+}
+.floating_line img {
+  scale: 0.5;
+  rotate: -20deg;
+}
+.floating_line img:hover {
+  scale: 0.6;
+}
+.floating_tel {
+  position: absolute;
+  top: 100px;
+  right: -50px;
+}
+.floating_tel img {
+  scale: 0.3;
+  rotate: 20deg;
+  z-index: 98;
+}
+.floating_tel img:hover {
+  scale: 0.4;
+}
+/*# sourceMappingURL=common.css.map */

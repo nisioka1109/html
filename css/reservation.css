@@ -1,0 +1,87 @@
+.reservation {
+  max-width: 1000px;
+  width: 80%;
+  padding-top: 30vh;
+  display: block;
+  margin: 0 auto;
+}
+.reservation .subtitle {
+  text-align: center;
+}
+.reservation_line {
+  font-weight: bold;
+  color: green;
+  font-size: 20px;
+}
+.reservation_insta {
+  font-weight: bold;
+  color: red;
+  font-size: 25px;
+}
+.reservation_text {
+  max-width: 700px;
+  width: 70%;
+  text-align: center;
+  display: block;
+  margin: 70px auto;
+}
+.reservation_text p {
+  margin-bottom: 30px;
+}
+.reservation_btn {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 15%;
+       column-gap: 15%;
+}
+
+.btn_text {
+  position: relative;
+  margin-left: 30px;
+}
+
+.btn_lineicon::after {
+  content: "";
+  display: block;
+  background: url(../images/lineicon.svg) no-repeat center center/cover;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 1px;
+  left: -40px;
+}
+.btn_instagramicon::after {
+  content: "";
+  display: block;
+  background: url(../images/instaicon.png) no-repeat center center/cover;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 1px;
+  left: -40px;
+}
+
+.policy {
+  margin-top: 20vh;
+  line-height: 1;
+}
+.policy_img {
+  height: 40vh;
+  width: 100%;
+  background: url(../images/policy.jpg) no-repeat center center/cover;
+}
+.policy_text {
+  max-width: 1000px;
+  width: 80%;
+  margin: 50px auto;
+}
+.policy ul {
+  display: grid;
+  row-gap: 50px;
+  margin-top: 30px;
+  list-style: circle;
+}
+.policy ul li {
+  padding-left: 20px;
+}
+/*# sourceMappingURL=reservation.css.map */

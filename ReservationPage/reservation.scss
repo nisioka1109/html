@@ -1,0 +1,109 @@
+//__________________________reservation___________________________________________
+
+.reservation {
+    max-width: 1000px;
+    width: 80%;
+    padding-top: 30vh;
+    display: block;
+    margin: 0 auto;
+
+    .subtitle {
+        text-align: center;
+    }
+
+    &_line {
+        font-weight: bold;
+        color: green;
+        font-size: 20px;
+    }
+
+    &_insta {
+        font-weight: bold;
+        color: red;
+        font-size: 25px;
+    }
+
+    &_text {
+        max-width: 700px;
+        width: 70%;
+        text-align: center;
+        display: block;
+        margin: 70px auto;
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &_btn {
+        display: flex;
+        justify-content: center;
+        column-gap: 15%;
+    }
+}
+
+.btn_text {
+    position: relative;
+    margin-left: 30px;
+}
+
+.btn {
+    &_lineicon {
+        &::after {
+            content: "";
+            display: block;
+            background: url(../images/lineicon.svg)no-repeat center center/cover;
+            width: 30px;
+            height: 30px;
+
+            position: absolute;
+            top: 1px;
+            left: -40px;
+        }
+    }
+
+    &_instagramicon {
+        &::after {
+            content: "";
+            display: block;
+            background: url(../images/instaicon.png)no-repeat center center/cover;
+            width: 30px;
+            height: 30px;
+
+            position: absolute;
+            top: 1px;
+            left: -40px;
+        }
+    }
+}
+
+
+//___________________________policy___________________________
+
+.policy {
+    margin-top: 20vh;
+    line-height: 1;
+
+    &_img {
+        height: 40vh;
+        width: 100%;
+        background: url(../images/policy.jpg)no-repeat center center/cover;
+    }
+
+    &_text {
+        max-width: 1000px;
+        width: 80%;
+        margin: 50px auto;
+    }
+
+    ul {
+        display: grid;
+        row-gap: 50px;
+        margin-top: 30px;
+        list-style: circle;
+
+        li {
+            padding-left: 20px;
+        }
+    }
+}

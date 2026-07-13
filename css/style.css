@@ -1,0 +1,367 @@
+body {
+  background-color: #FFF7E8;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 2em;
+  letter-spacing: 0.2rem;
+}
+
+.bg-logo {
+  position: fixed;
+  width: 80px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.subtitle {
+  color: #A98058;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  z-index: 999;
+}
+.btn_text {
+  color: #2d1d16;
+}
+.btn_line {
+  position: absolute;
+  background: #2d1d16;
+  transition: 0.4s ease;
+}
+.btn_top {
+  width: 150px;
+  height: 1px;
+  top: 20px;
+  left: 20px;
+}
+.btn_right {
+  width: 1px;
+  height: 40px;
+  bottom: 0;
+  right: 40px;
+}
+.btn_bottom {
+  width: 150px;
+  height: 1px;
+  bottom: 20px;
+  right: 20px;
+}
+.btn_left {
+  width: 1px;
+  height: 40px;
+  top: 0;
+  left: 40px;
+}
+
+.btn:hover .btn_top {
+  transform: translateX(20px);
+  width: 220px;
+}
+
+.btn:hover .btn_left {
+  transform: translateY(20px);
+  height: 60px;
+}
+
+.btn:hover .btn_bottom {
+  transform: translateX(-20px);
+  width: 220px;
+}
+
+.btn:hover .btn_right {
+  transform: translateY(-20px);
+  height: 60px;
+}
+
+.footer {
+  max-width: 1500px;
+  width: 95%;
+  margin: 30vh auto 0;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: #A98058;
+  line-height: 1.5rem;
+  position: relative;
+}
+.footer_logo {
+  padding: 0 10%;
+}
+.footer_logo img {
+  scale: 0.5;
+}
+.footer_menu {
+  padding: 0 20%;
+  position: relative;
+}
+.footer_menu ul {
+  display: grid;
+  row-gap: 50px;
+}
+.footer_menu::before {
+  content: "";
+  display: block;
+  max-height: 300px;
+  height: 100%;
+  width: 1px;
+  border: solid 0.5px #A98058;
+  position: absolute;
+  left: 0;
+  top: -25px;
+}
+.footer_menu::after {
+  content: "";
+  display: block;
+  max-height: 300px;
+  height: 100%;
+  width: 1px;
+  border: solid 0.5px #A98058;
+  position: absolute;
+  right: 10%;
+  top: -25px;
+}
+.footer_other {
+  padding: 0 10%;
+}
+.footer_other p {
+  margin: 30px 0;
+}
+.footer_other_link {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  margin: 20px 0 40px;
+}
+.footer_copy {
+  color: #A98058;
+  text-align: center;
+}
+
+.loading {
+  position: fixed;
+  inset: 0;
+  background: #FFF2D4;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading_logo {
+  scale: 0.6;
+  opacity: 0;
+}
+
+.topbackground {
+  background-color: rgb(255, 247, 232);
+}
+
+.mainvisual {
+  position: relative;
+  height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.mainvisual_top {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  height: 60vh;
+}
+.mainvisual_top_img {
+  background: url(../images/mainvisual.JPG) no-repeat center center/cover;
+  margin: 10%;
+}
+.mainvisual_top_logo {
+  margin: 40% 30% 30% 10%;
+  line-height: 0;
+}
+.mainvisual_top_logo h1 {
+  scale: 0.9;
+}
+.mainvisual_bottom {
+  height: 40vh;
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+}
+.mainvisual_bottom_shopname {
+  margin: 30%;
+  font-size: 20px;
+  color: #2d1d16;
+  position: relative;
+}
+.mainvisual_bottom_shopname::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 48px;
+  left: -70px;
+  border: solid 1px #2d1d16;
+  width: 90px;
+  transform: rotate(90deg);
+}
+.mainvisual_bottom_img {
+  background: url(../images/mainivisual2.jpg) no-repeat center center/cover;
+  margin: 0% 10% 15% 10%;
+}
+
+.about {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 80vh;
+  padding: 10% 15%;
+  color: #3A2C22;
+  align-items: center;
+}
+.about_text span {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.about_text span img {
+  scale: 0.8;
+  rotate: -25deg;
+}
+.about_text_slogan {
+  font-size: 25px;
+  margin: 70px 0;
+  position: relative;
+}
+.about_text_slogan::after {
+  content: "";
+  display: block;
+  max-width: 600px;
+  width: 200%;
+  height: 1px;
+  background-color: #b58b67;
+  position: absolute;
+  left: -80%;
+  top: 130%;
+}
+.about_text_description {
+  font-size: 16px;
+  margin-top: 30px;
+}
+.about_photo {
+  margin-top: 150px;
+  padding: 2%;
+  border: solid 1px #A98058;
+}
+
+@media (max-width: 700px) {
+  .btn {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 1000px) {
+  .about {
+    padding: 10%;
+  }
+}
+@media (max-width: 800px) {
+  .about_photo {
+    margin-top: 30px;
+  }
+  .about_text_slogan {
+    font-size: 20px;
+  }
+  .about_text_description {
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .about {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .about_photo {
+    background: none;
+  }
+  .about_text_slogan {
+    font-size: 30px;
+  }
+  .about_text_description {
+    font-size: 19px;
+  }
+}
+@media (max-width: 470px) {
+  .about {
+    height: auto;
+  }
+  .about_text_slogan {
+    font-size: 20px;
+  }
+  .about_text_description {
+    font-size: 12px;
+  }
+}
+.menu {
+  display: flex;
+  margin-top: 200px;
+  justify-content: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+.menu_photo {
+  margin: 3% 0 3% 8%;
+  border: solid 1px #A98058;
+  padding: 1%;
+}
+.menu_text {
+  margin: 5% 0 3% 8%;
+}
+
+.instagram {
+  height: 80vh;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 30vh 0;
+}
+.instagram_title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #A98058;
+  margin-top: 10vh;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.instagram_photo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  row-gap: 20px;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+}
+.instagram_photo_item img {
+  width: 200px;
+  height: 250px;
+}
+.instagram .btn {
+  display: flex;
+  width: 300px;
+  margin: 50px auto 0;
+}
+
+.header {
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}
+/*# sourceMappingURL=style.css.map */
