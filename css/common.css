@@ -130,7 +130,7 @@ img {
   border: solid 0.5px #A98058;
   position: absolute;
   left: 0;
-  top: -50px;
+  top: 0px;
 }
 .footer_menu::after {
   content: "";
@@ -141,7 +141,7 @@ img {
   border: solid 0.5px #A98058;
   position: absolute;
   right: 10%;
-  top: -25px;
+  top: 0px;
 }
 .footer_other {
   padding: 0 10%;

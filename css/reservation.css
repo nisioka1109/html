@@ -29,12 +29,21 @@
   margin-bottom: 30px;
 }
 .reservation_btn {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   -moz-column-gap: 15%;
        column-gap: 15%;
 }
 
+@media (max-width: 700px) {
+  .reservation_btn {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+    row-gap: 40px;
+  }
+}
 .btn_text {
   position: relative;
   margin-left: 30px;

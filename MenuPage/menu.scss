@@ -25,151 +25,15 @@ img {
     font-size: 40px;
 }
 
-//__________________________footer共有CSS__________________________
-
-.footer {
-    max-width: 1500px;
-    width: 95%;
-    margin: 30vh auto 0;
-    height: 50vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: #A98058;
-    line-height: 1.5rem;
-    position: relative;
-
-    &_logo {
-        padding: 0 10%;
-
-        img {
-            scale: calc(0.5);
-        }
-    }
-
-    &_menu {
-        padding: 0 20%;
-        position: relative;
-
-        ul {
-            display: grid;
-            row-gap: 50px;
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            max-height: 300px;
-            height: 100%;
-            width: 1px;
-            border: solid 0.5px #A98058;
-            position: absolute;
-            left: 0;
-            top: -25px;
-        }
-
-        &::after {
-            content: "";
-            display: block;
-            max-height: 300px;
-            height: 100%;
-            width: 1px;
-            border: solid 0.5px #A98058;
-            position: absolute;
-            right: 10%;
-            top: -25px;
-        }
-    }
-
-    &_other {
-        padding: 0 10%;
-
-        p {
-            margin: 30px 0;
-        }
-
-        &_link {
-            display: flex;
-            column-gap: 10px;
-            margin: 20px 0 40px;
-        }
-    }
-
-    &_copy {
-        color: #A98058;
-        text-align: center;
-    }
-}
-
-//_________________________________humbarger__________________________________
-
-.hamburger {
-    width: 50px;
-    cursor: pointer;
-    display: flex;
-    position: fixed;
-    z-index: 999;
-    right: 30px;
-    top: 30px;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
 
 
-    span {
-        width: 50px;
-        height: 2px;
-        background: #b58b67;
-        transition: all .4s ease;
-
-    }
-
-    p {
-        font-size: 20px;
-        color: #b58b67;
-    }
-}
-
-/* 上の線 */
-.hamburger.active span:nth-child(1) {
-    transform:
-        translateY(14px) rotate(45deg);
-}
-
-/* 真ん中の線 */
-.hamburger.active span:nth-child(2) {
-    transform: translateX(100px);
-}
-
-/* 下の線 */
-.hamburger.active span:nth-child(3) {
-    transform:
-        translateY(-14px) rotate(-45deg);
-}
-
-//__________________________mainvisual___________________________________________
-
-.mainvisual {
-
-    color: #ECB880;
-    padding: 30%;
-
-    h1 {
-        font-size: 40px;
-        text-align: center;
-    }
-
-    h2 {
-        font-size: 20px;
-        text-align: center;
-    }
-}
 
 //__________________________menu___________________________________________
 .menu {
     max-width: 1000px;
     width: 80%;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
+    padding: 200px 0 0;
 
     h2 {
         text-align: center;

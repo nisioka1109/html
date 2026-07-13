@@ -9,7 +9,7 @@ gsap.from(
         stagger: 0.1,//各要素のアニメーションのずれ
         scrollTrigger: {
             trigger: '.about',//トリガー
-            start: 'top 50%', // aboutが画面の70%位置に来たら発火
+            start: 'top 70%', // aboutが画面の70%位置に来たら発火
             toggleActions: 'play none none none',//一度だけ再生
         }
     }
@@ -25,7 +25,7 @@ gsap.from(
         stagger: 0.1,//各要素のアニメーションのずれ
         scrollTrigger: {
             trigger: '.twoabout',//トリガー
-            start: 'top 50%', // twoaboutが画面の70%位置に来たら発火
+            start: 'top 70%', // twoaboutが画面の70%位置に来たら発火
             toggleActions: 'play none none none',//一度だけ再生
         }
     }
@@ -36,7 +36,7 @@ gsap.from(".owner", {
     duration: 0.8,
     scrollTrigger: {
         trigger: ".owner",
-        start: "top 50%",
+        start: "top 70%",
         toggleActions: "play none none none",
     }
 });
@@ -51,7 +51,7 @@ gsap.from(".owner_text > *", {
     delay: 0.3,
     scrollTrigger: {
         trigger: ".owner",
-        start: "top 50%",
+        start: "top 70%",
         toggleActions: "play none none none",
     }
 });
@@ -67,7 +67,7 @@ gsap.from(
         stagger: 0.2,
         scrollTrigger: {
             trigger: '.other',
-            start: 'top 50%',
+            start: 'top 70%',
             toggleActions: 'play none none none',
         }
     }
@@ -83,7 +83,7 @@ gsap.from(
         stagger: 0.2,
         scrollTrigger: {
             trigger: '.goods',
-            start: 'top 50%',
+            start: 'top 70%',
             toggleActions: 'play none none none',
         }
     }
@@ -98,7 +98,27 @@ gsap.from(
         stagger: 0.2,
         scrollTrigger: {
             trigger: '.events',
-            start: 'top 50%',
+            start: 'top 70%',
+            toggleActions: 'play none none none',
+        }
+    }
+);
+
+
+
+
+//_____________アクセスのアニメーション__________
+gsap.from(
+    '.access_title, .access_map, .access_main_bullet',
+    {
+        y: 50, // 下から上へ
+        opacity: 0, // 透明から表示
+        filter: 'blur(10px)', // ぼかし
+        duration: 0.6, // アニメーション時間
+        stagger: 0.15, // 少しずつ表示
+        scrollTrigger: {
+            trigger: '.access',
+            start: 'top 70%',
             toggleActions: 'play none none none',
         }
     }
