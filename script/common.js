@@ -35,7 +35,7 @@ for (let i = 0; i < logoCount; i++) {
     const img = document.createElement("img"); // img要素を作成
 
     // 1～13の中からランダムな数字を取得
-    const randomNum = Math.floor(Math.random() * 13) + 1;
+    const randomNum = Math.floor(Math.random() * 16) + 1;
 
     // ランダムで選ばれた画像を設定（illust1.png～illust13.png）
     img.src = `../images/illust${randomNum}.png`;

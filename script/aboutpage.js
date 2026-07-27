@@ -1,4 +1,16 @@
 //About１つ目
+gsap.from('.aboutsubtitle', {
+    y: 50,
+    opacity: 0,
+    filter: 'blur(10px)',
+    duration: 0.6,
+    scrollTrigger: {
+        trigger: '.aboutsubtitle',
+        start: 'top 50%',
+        toggleActions: 'play none none none',
+    }
+});
+
 gsap.from(
     '.about .about_text > *, .about_photo',
     {

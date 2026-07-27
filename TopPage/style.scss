@@ -3,7 +3,7 @@
 //______________________共有CSS__________________________
 body {
     background-color: #FFF7E8;
-    font-family: 'Times New Roman', Times, serif;
+
     line-height: 2em;
     letter-spacing: 0.2rem;
 }
@@ -25,150 +25,6 @@ body {
 
 img {
     vertical-align: bottom;
-}
-
-.btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 100px;
-    margin-top: 50px;
-    z-index: 999;
-
-    &_text {
-        color: #2d1d16;
-    }
-
-    &_line {
-        position: absolute;
-        background: #2d1d16;
-        transition: .4s ease;
-    }
-
-    &_top {
-        width: 150px;
-        height: 1px;
-        top: 20px;
-        left: 20px;
-    }
-
-    &_right {
-        width: 1px;
-        height: 40px;
-        bottom: 0;
-        right: 40px;
-    }
-
-    &_bottom {
-        width: 150px;
-        height: 1px;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    &_left {
-        width: 1px;
-        height: 40px;
-        top: 0;
-        left: 40px;
-    }
-}
-
-.btn:hover .btn_top {
-    transform: translateX(20px);
-    width: 220px;
-}
-
-.btn:hover .btn_left {
-    transform: translateY(20px);
-    height: 60px
-}
-
-.btn:hover .btn_bottom {
-    transform: translateX(-20px);
-    width: 220px;
-}
-
-.btn:hover .btn_right {
-    transform: translateY(-20px);
-    height: 60px;
-}
-
-//__________________________footer共有CSS__________________________
-
-.footer {
-    max-width: 1500px;
-    width: 95%;
-    margin: 30vh auto 0;
-    height: 50vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: #A98058;
-    line-height: 1.5rem;
-    position: relative;
-
-    &_logo {
-        padding: 0 10%;
-
-        img {
-            scale: calc(0.5);
-        }
-    }
-
-    &_menu {
-        padding: 0 20%;
-        position: relative;
-
-        ul {
-            display: grid;
-            row-gap: 50px;
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            max-height: 300px;
-            height: 100%;
-            width: 1px;
-            border: solid 0.5px #A98058;
-            position: absolute;
-            left: 0;
-            top: -25px;
-        }
-
-        &::after {
-            content: "";
-            display: block;
-            max-height: 300px;
-            height: 100%;
-            width: 1px;
-            border: solid 0.5px #A98058;
-            position: absolute;
-            right: 10%;
-            top: -25px;
-        }
-    }
-
-    &_other {
-        padding: 0 10%;
-
-        p {
-            margin: 30px 0;
-        }
-
-        &_link {
-            display: flex;
-            column-gap: 10px;
-            margin: 20px 0 40px;
-        }
-    }
-
-    &_copy {
-        color: #A98058;
-        text-align: center;
-    }
 }
 
 //_______________________ローディング__________________________
@@ -207,7 +63,7 @@ img {
 
     &_top {
         display: grid;
-        grid-template-columns: 5fr 2fr;
+        grid-template-columns: 2fr 5fr;
         height: 60vh;
 
         &_img {
@@ -216,11 +72,15 @@ img {
         }
 
         &_logo {
-            margin: 40% 30% 30% 10%;
+            margin: 40% 10% 30% 30%;
             line-height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             h1 {
                 scale: calc(0.9);
+
             }
 
 
@@ -228,9 +88,9 @@ img {
     }
 
     &_bottom {
-        height: 40vh;
+        height: 50vh;
         display: grid;
-        grid-template-columns: 3fr 5fr;
+
 
         &_shopname {
             margin: 30%;
@@ -238,21 +98,21 @@ img {
             color: #2d1d16;
             position: relative;
 
-            &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 48px;
-                left: -70px;
-                border: solid 1px #2d1d16;
-                width: 90px;
-                transform: rotate(90deg);
-            }
+            // &::after {
+            //     content: "";
+            //     display: block;
+            //     position: absolute;
+            //     top: 48px;
+            //     left: -70px;
+            //     border: solid 1px #2d1d16;
+            //     width: 90px;
+            //     transform: rotate(90deg);
+            // }
         }
 
         &_img {
             background: url(../images/mainivisual2.jpg)no-repeat center center/cover;
-            margin: 0% 10% 15% 10%;
+            margin: 0% 15% 15% 5%;
         }
     }
 }
@@ -292,7 +152,7 @@ img {
                 content: "";
                 display: block;
                 max-width: 600px;
-                width: 200%;
+                width: 180%;
                 height: 1px;
                 background-color: #b58b67;
 
@@ -316,15 +176,15 @@ img {
         border: solid 1px #A98058;
 
     }
-}
 
-
-@media (max-width: 700px) {
-    .btn {
-        margin-left: 50%;
-        transform: translateX(-50%);
+    a {
+        text-align: center;
     }
+
 }
+
+
+
 
 
 
@@ -393,27 +253,60 @@ img {
 //______________________________menu______________________________
 
 .menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 200px;
     justify-content: center;
-    column-gap: 50px;
+    column-gap: 30px;
+
+
 
     &_photo {
         margin: 3% 0 3% 8%;
-        border: solid 1px #A98058;
-        padding: 1%;
+        max-height: 450px;
+        align-self: center;
+
     }
 
     &_text {
-        margin: 5% 0 3% 8%;
+        max-width: 350px;
+
+        a {
+            max-width: 50px;
+        }
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:700px) {
+    .menu {
+        grid-template-columns: 1fr;
+        padding: 0 10%;
+        row-gap: 40px;
+
+        &_photo {
+            order: 1;
+            justify-self: center;
+            margin: 0;
+        }
+
+        &_text {
+            display: block;
+            margin: 0 auto;
+            font-size: 12px;
+            text-align: center;
+        }
     }
 }
 
 //______________________________Instagram_____________________________
 .instagram {
-    height: 80vh;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 30vh 0;
+    margin-top: 200px;
 
 
     &_title {
@@ -452,8 +345,38 @@ img {
     }
 }
 
+@media(max-width:900px) {
+    .instagram {
+        &_photo {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media(max-width:700px) {
+    .instagram {
+
+        &_photo {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media(max-width:450px) {
+
+    .instagram {
+        &_photo {
+            &_item {
+                img {
+                    width: 150px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
 .header {
     top: 0;
     position: sticky;
-
 }

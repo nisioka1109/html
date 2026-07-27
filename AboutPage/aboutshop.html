@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/aboutshop.css">
@@ -25,6 +28,7 @@
             <li><a href="../ReservationPage/reservation.html">Reservation</a></li>
         </ul>
     </header>
+    <h2 class="aboutsubtitle subtitle">About</h2>
     <div class="about">
         <section class="about_text">
             <span>
@@ -39,11 +43,9 @@
                 お客様一人ひとりのお悩みや理想に<br>
                 寄り添った施術をご提供しています。<br> 落ち着いた空間と心地よい時間の中で、<br>
                 特別なひとときをお楽しみください。<br><br>
-
                 大型サロンは少し緊張してしまう <br>
                 自分だけの空間でゆっくり過ごしたい
             </p>
-
         </section>
         <section class="about_photo">
             <img src="../images/policy.jpg" alt="">
@@ -52,13 +54,15 @@
     </div>
     <div class="twoabout">
         <section class="twoabout_photo">
-            <h2><img src="../images/mainvisual.jpg" alt=""></h2>
+            <h2>
+                <img src="../images/mainvisual.jpg" alt="" class="twoabout_photo_1">
+                <img src="../images/1782348682629.jpg" alt="" class="twoabout_photo_2">
+            </h2>
         </section>
         <section class="twoabout_text">
             <span>
-                <h2>わんちゃんとの暮らしを、<br>もっと楽しく、もっと特別に。
-            </span></h2>
-            <img src="../images/leg.png" alt="">
+                <h2>わんちゃんとの暮らしを、<br>もっと楽しく、もっと特別に。</h2>
+                <img src="../images/leg.png" alt="">
             </span>
 
             <p>当サロンではトリミングだけでなく、<br>
@@ -76,12 +80,14 @@
     </div>
     <div class="owner">
         <section class="owner_text">
-            <h2 class="owner_text_title subtitle">Owner</h2>
+            <h2 class="owner_text_title subtitle">Special Thanks</h2>
             <h2 class="owner_img"><img src="../images/illust1.png" alt=""></h2>
-            <h2 class="owner_text_name">みやざき　あやの</h2>
-            <p class="owner_text_maintext">
-                動物が大好きで、幼い頃からたくさんの犬や猫と暮らしてきました。トリマーとして経験を積む中で、「ただきれいにするだけでなく、一頭一頭が安心して過ごせる場所をつくりたい」という想いから当サロンをオープンしました。
-            </p>
+            <div class="owner_respon">
+                <h2 class="owner_text_name">みやざき　あやの</h2>
+                <p class="owner_text_maintext">
+                    動物が大好きで、幼い頃からたくさんの犬や猫と暮らしてきました。トリマーとして経験を積む中で、「ただきれいにするだけでなく、一頭一頭が安心して過ごせる場所をつくりたい」という想いから当サロンをオープンしました。
+                </p>
+            </div>
         </section>
     </div>
     <div class="other">
@@ -98,21 +104,21 @@
         <h2 class="goods_title">Goods</h2>
         <section class="goods_column">
             <article class="goods_item">
-                <img src="../images/1782348722284.jpg" alt="">
+                <img src="../images/goods.jpg" alt="">
                 <span>
                     <h2 class="goods_name">オリジナルバンダナ</h2>
                     <h2 class="goods_price">¥1000</h2>
                 </span>
             </article>
             <article class="goods_item">
-                <img src="../images/1782348722284.jpg" alt="">
+                <img src="../images/goods.jpg" alt="">
                 <span>
                     <h2 class="goods_name">ハンドメイド首輪</h2>
                     <h2 class="goods_price">¥1000</h2>
                 </span>
             </article>
             <article class="goods_item">
-                <img src="../images/1782348722284.jpg" alt="">
+                <img src="../images/goods.jpg" alt="">
                 <span>
                     <h2 class="goods_name">オリジナル缶バッチ</h2>
                     <h2 class="goods_price">¥1000</h2>
@@ -183,16 +189,9 @@
                         <li>地下鉄東山線 星ヶ丘駅から 徒歩 20 分</li>
                     </ul>
                 </span>
-                <a
+                <a class="access_map_link"
                     href="https://www.google.com/maps/place/%E3%82%A4%E3%83%8C%E3%83%8E%E3%83%93%E3%83%A8%E3%82%A6%E3%82%B7%E3%83%84+cocon/@35.155786,136.9918852,17z/data=!3m1!4b1!4m6!3m5!1s0x600365924c1def3b:0x1b5dafada426e291!8m2!3d35.1557816!4d136.9944601!16s%2Fg%2F11v4__7b8y?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D">
-                    <section class="btn">
-                        <span class="btn_top btn_line"></span>
-                        <span class="btn_right btn_line"></span>
-                        <span class="btn_bottom btn_line"></span>
-                        <span class="btn_left btn_line"></span>
-                        <h3 class="btn_text">Google Map</h3>
-                    </section>
-                </a>
+                    GoogleMapへ</a>
             </article>
         </section>
     </div>

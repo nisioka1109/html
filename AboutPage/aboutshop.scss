@@ -1,7 +1,6 @@
 //______________________共有CSS__________________________
 body {
     background-color: #FFF7E8;
-    font-family: 'Times New Roman', Times, serif;
     line-height: 2em;
     letter-spacing: 0.2rem;
 }
@@ -26,6 +25,11 @@ img {
 }
 
 //__________________________About___________________________________________
+.aboutsubtitle {
+    text-align: center;
+    padding-top: 200px;
+}
+
 .about {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: grid;
@@ -62,7 +66,7 @@ img {
                 content: "";
                 display: block;
                 max-width: 600px;
-                width: 200%;
+                width: 180%;
                 height: 1px;
                 background-color: #b58b67;
 
@@ -169,6 +173,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 200px;
+    font-size: 14px;
 
     &_photo {
         //左側の写真部分
@@ -177,37 +182,37 @@ img {
 
         h2 {
             position: relative;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 30%;
-                height: 50%;
-                min-width: 200px;
-                min-height: 200px;
-                background: url(../images/1782348682629.jpg)no-repeat center center/cover;
-
-                position: absolute;
-                bottom: -120px;
-                right: 0;
-                z-index: -1;
-            }
+            max-width: 500px;
+            width: 100%;
+            height: 500px;
         }
 
-        img {
-            scale: calc(0.7);
-            z-index: 999;
-            min-width: 400px;
-            min-height: 180px;
+
+
+        &_1 {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 70%;
+        }
+
+        &_2 {
+            width: 60%;
+            position: absolute;
+            top: 200px;
+            right: 0px;
         }
     }
 
 
     &_text {
         //＿＿＿＿＿右側のテキストの部分
-        margin-left: 10%;
         max-width: 470px;
+        width: 100%;
         position: relative;
+        display: block;
+        margin: 0 auto;
+        padding: 4%;
 
         span {
             //_______わんちゃんとの暮らしを、 もっと楽しく、もっと特別に。
@@ -221,7 +226,7 @@ img {
         }
 
         h2 {
-            font-size: 25px; //________タイトルの文字
+            font-size: 20px; //________タイトルの文字
 
             // &::after {
             //     ////___タイトルの下のボーダー
@@ -250,17 +255,11 @@ img {
 
         &_photo {
             order: 1;
-
-            img {
-                scale: calc(0.5);
-            }
+            margin-top: 60px;
 
             h2 {
-                &::after {
-                    bottom: 0;
-                    right: 10%;
-
-                }
+                display: block;
+                margin: 0 auto;
             }
         }
     }
@@ -274,7 +273,7 @@ img {
     max-width: 1000px;
     min-width: 300px;
     display: block;
-    margin: 400px auto 0;
+    margin: 0 auto;
 
     &_img {
         display: none;
@@ -284,18 +283,20 @@ img {
         //________左側のテキストの部分全体
         background: url(../images/illust1.png)no-repeat right bottom/50%; //＿＿＿右側の画像を背景画像にして設置
 
+
         &_title {
-            //__________Ownerの文字
+            //__________Special Thanksの文字
             font-size: 40px;
             font-weight: bold;
             color: #A98058;
             margin-top: 100px;
+            text-align: center;
         }
 
         &_name {
             ////＿＿＿＿＿オーナーさんの名前
             position: relative;
-            font-size: 60px;
+            font-size: 45px;
             color: #000;
             z-index: 999;
             margin-top: 50px;
@@ -324,9 +325,31 @@ img {
 
         &_maintext {
             //______________オーナーさんについての本文
-            width: 300px;
+            max-width: 500px;
+            width: 100%;
             margin-top: 50px;
         }
+    }
+}
+
+@media(max-width:1200px) {
+    .owner {
+        &_img {
+            display: block;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        &_text {
+            background: none;
+            margin: 0 auto;
+
+            .subtitle {
+                text-align: center;
+                margin-bottom: 100px;
+            }
+        }
+
     }
 }
 
@@ -355,6 +378,8 @@ img {
                 font-size: 12px;
             }
         }
+
+
     }
 }
 
@@ -378,7 +403,7 @@ img {
     max-width: 1000px;
     margin: 50px auto 0;
     display: flex;
-    column-gap: 20%;
+    column-gap: 10%;
     justify-content: center;
     text-align: center;
 
@@ -431,9 +456,14 @@ img {
     }
 }
 
+@media(max-width:1200px) {
+    .other {
+        margin-top: 600px;
+    }
+}
+
 @media(max-width:750px) {
     .other {
-        margin-top: 300px;
         column-gap: 0;
 
         &_designer {
@@ -460,7 +490,7 @@ img {
 
 @media(max-width:600px) {
     .other {
-        margin-top: 200px;
+        margin-top: 300px;
     }
 }
 
@@ -477,6 +507,7 @@ img {
         font-weight: bold;
         color: #A98058;
         margin-bottom: 50px;
+        text-align: center;
     }
 
     &_column {
@@ -546,6 +577,7 @@ img {
         font-weight: bold;
         color: #A98058;
         margin-bottom: 50px;
+        text-align: center;
     }
 
     &_item {
@@ -588,6 +620,23 @@ img {
     }
 }
 
+@media(max-width:600px) {
+    .events {
+        &_time {
+            font-size: 12px;
+        }
+
+        &_subtitle {
+            font-size: 16px;
+        }
+
+        &_subtext {
+            font-size: 12px;
+        }
+    }
+}
+
+
 .access {
     padding: 10% 6% 10% 10%;
 
@@ -596,6 +645,7 @@ img {
         grid-template-columns: 1fr 1fr;
         height: 40vh;
         margin-top: 50px;
+        column-gap: 50px;
 
         &_bullet {
             padding: 5% 0;
@@ -608,8 +658,13 @@ img {
         }
     }
 
+    &_title {
+        text-align: center;
+    }
+
     &_map {
-        margin-right: 50px;
+
+
 
         &_logo {
             display: grid;
@@ -621,93 +676,106 @@ img {
             row-gap: 45px;
             margin: 5px 10px;
         }
+
+        &_link {
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            display: block;
+            width: 150px;
+            padding: 15px 15px 10px 0;
+            text-decoration: none;
+            transition: color .3s;
+            font-size: 16px;
+
+            // /* // ボーダー */
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     inset: -8px;
+            //     border-bottom: 2px solid #ECB880;
+
+            //     transform: scale(.8);
+            //     opacity: 0;
+
+            //     transition: .4s cubic-bezier(.2, 1.4, .4, 1);
+            // }
+
+            /* // ロゴ */
+            &::after {
+                content: "";
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                top: 10px;
+                right: -5px;
+                background: url("../images/leg.png") center / contain no-repeat;
+                opacity: 0;
+                rotate: 45deg;
+                transform: scale(0) rotate(-20deg);
+                transition: .4s cubic-bezier(.2, 1.4, .4, 1);
+            }
+
+            &:hover {
+                color: #ECB880;
+
+                &::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                &::after {
+                    opacity: 1;
+                    transform: scale(1) rotate(0deg);
+                }
+            }
+        }
     }
+
+
 }
 
 @media(max-width:1000px) {
     .access {
-        width: 400px;
+        width: 500px;
         margin: 0 auto;
+        padding: 0;
+        font-size: 12px;
 
         &_main {
             grid-template-columns: 1fr;
+
+            &_bullet {
+                padding: 2%;
+            }
         }
 
         &_map {
             h2 {
                 text-align: center;
-                width: 400px;
+                width: 390px;
+                padding: 4%;
+                box-sizing: border-box;
+
             }
         }
-
     }
 }
 
-.btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 100px;
-    margin-left: 80px;
-    margin-top: 50px;
-
-    &_text {
-        color: #2d1d16;
-    }
-
-    &_line {
-        position: absolute;
-        background: #2d1d16;
-        transition: .4s ease;
-    }
-
-    &_top {
-        width: 150px;
-        height: 1px;
-        top: 0px;
-        left: 20px;
-    }
-
-    &_right {
-        width: 1px;
-        height: 40px;
-        bottom: 0;
-        right: 40px;
-    }
-
-    &_bottom {
-        width: 150px;
-        height: 1px;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    &_left {
-        width: 1px;
-        height: 40px;
-        top: -20px;
-        left: 40px;
+@media(max-width:600px) {
+    .access {
+        width: 100%;
+        max-width: 390px;
+        box-sizing: border-box;
     }
 }
 
-.btn:hover .btn_top {
-    transform: translateX(20px);
-    width: 220px;
-}
 
-.btn:hover .btn_left {
-    transform: translateY(20px);
-    height: 60px
-}
 
-.btn:hover .btn_bottom {
-    transform: translateX(-20px);
-    width: 220px;
-}
 
-.btn:hover .btn_right {
-    transform: translateY(-20px);
-    height: 60px;
+//footer______________________________________________
+@media(max-width:1000px) {
+    .footer {
+        margin-top: 60vh;
+    }
 }

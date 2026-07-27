@@ -1,6 +1,9 @@
 body {
     background-color: #FFF7E8;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
     line-height: 2em;
     letter-spacing: 0.2rem;
 }
@@ -23,6 +26,8 @@ header {
 
 img {
     vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
 }
 
 .subtitle {
@@ -41,6 +46,7 @@ img {
     height: 100px;
     margin-top: 50px;
     z-index: 999;
+    overflow: hidden;
 
     &_text {
         color: #2d1d16;
@@ -106,8 +112,8 @@ img {
 
 .footer {
     max-width: 1500px;
-    width: 95%;
-    margin: 30vh auto 0;
+    width: 80%;
+    margin: 100px auto 0;
     height: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -128,7 +134,11 @@ img {
 
         ul {
             display: grid;
-            row-gap: 50px;
+            row-gap: 30px;
+
+            li {
+                text-align: center;
+            }
         }
 
         &::before {
@@ -160,19 +170,23 @@ img {
         padding: 0 10%;
 
         p {
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         &_link {
             display: flex;
             column-gap: 10px;
-            margin: 20px 0 40px;
+            margin: 20px 0;
 
             a::after {
                 content: "";
                 display: none;
             }
         }
+    }
+
+    &_animal {
+        font-size: 14px;
     }
 
     &_copy {
@@ -186,7 +200,7 @@ img {
     a {
         position: relative;
         display: inline-block;
-        padding: 10px 15px;
+        padding: 15px 15px 10px 0;
         text-decoration: none;
         transition: color .3s;
 
@@ -232,6 +246,50 @@ img {
             }
         }
     }
+}
+
+@media(max-width:900px) {
+    .footer {
+        grid-template-columns: 1fr;
+
+        row-gap: 10%;
+
+        &_logo {
+            h2 {
+                max-height: 400px;
+                text-align: center;
+
+                img {
+                    scale: 0.4;
+                }
+            }
+        }
+
+        &_menu {
+            ul {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            &::after {
+                top: -40px;
+                width: 100%;
+                min-width: 300px;
+                height: 1px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            &::before {
+                top: 160px;
+                width: 100%;
+                min-width: 300px;
+                height: 1px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
 }
 
 /* //_________________________________humbarger__________________________________ */
@@ -385,21 +443,21 @@ img {
     width: 200px;
     height: 300px;
     top: 100px;
-    right: 0;
+    right: 0px;
     z-index: 9998;
 
     &_line {
         position: absolute;
-        top: 40px;
-        right: 0px;
+        top: 20px;
+        right: 20px;
         z-index: 99;
 
         img {
-            scale: calc(0.5);
+            width: 100px;
             rotate: -20deg;
 
             &:hover {
-                scale: calc(0.6);
+                scale: calc(1.1);
             }
         }
 
@@ -409,15 +467,33 @@ img {
     &_tel {
         position: absolute;
         top: 100px;
-        right: -50px;
+        right: 0px;
 
         img {
-            scale: calc(0.3);
+            width: 70px;
             rotate: 20deg;
             z-index: 98;
 
             &:hover {
-                scale: calc(0.4);
+                scale: calc(1.1);
+            }
+        }
+    }
+}
+
+@media(max-width:500px) {
+    .floating {
+        &_line {
+            img {
+                width: 70px;
+            }
+        }
+
+        &_tel {
+            top: 80px;
+
+            img {
+                width: 50px;
             }
         }
     }
