@@ -22,12 +22,24 @@ img {
     color: #A98058;
     font-weight: bold;
     font-size: 40px;
+    text-align: center;
 }
 
 //__________________________About___________________________________________
 .aboutsubtitle {
     text-align: center;
     padding-top: 200px;
+    position: relative;
+
+    &::after {
+        content: "私たちについて";
+        position: absolute;
+        display: block;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+    }
 }
 
 .about {
@@ -291,6 +303,9 @@ img {
             color: #A98058;
             margin-top: 100px;
             text-align: center;
+            line-height: 3rem;
+
+
         }
 
         &_name {
@@ -299,7 +314,8 @@ img {
             font-size: 45px;
             color: #000;
             z-index: 999;
-            margin-top: 50px;
+            margin: 50px 0;
+            width: 400px;
 
 
             &::before {
@@ -328,6 +344,7 @@ img {
             max-width: 500px;
             width: 100%;
             margin-top: 50px;
+            margin: 50px 0;
         }
     }
 }
@@ -336,13 +353,23 @@ img {
     .owner {
         &_img {
             display: block;
-            margin: 30px 0;
+            margin: 30px auto;
             text-align: center;
+            width: 400px;
         }
 
         &_text {
             background: none;
             margin: 0 auto;
+            width: 400px;
+
+            &_name {
+                margin: 50px auto;
+            }
+
+            &_maintext {
+                margin: 50px auto;
+            }
 
             .subtitle {
                 text-align: center;
@@ -361,6 +388,7 @@ img {
             display: block;
             margin: 30px 0;
             text-align: center;
+            width: 300px;
         }
 
         &_text {
@@ -368,6 +396,8 @@ img {
 
             &_name {
                 font-size: 40px;
+                width: 400px;
+                margin: 50px 0;
 
                 &::before {
                     margin-bottom: 10px;
@@ -376,6 +406,8 @@ img {
 
             &_maintext {
                 font-size: 12px;
+                margin: 50px 0;
+                width: 400px;
             }
         }
 
@@ -388,8 +420,15 @@ img {
         width: 50%;
 
         &_text {
+            width: 300px;
+
             &_name {
                 font-size: 30px;
+                width: 300px;
+            }
+
+            &_maintext {
+                width: 300px;
             }
         }
     }
@@ -407,14 +446,56 @@ img {
     justify-content: center;
     text-align: center;
 
+    &_subtitle {
+        position: relative;
+
+        &::after {
+            content: "ご協力いただいた皆様";
+            position: absolute;
+            display: block;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
+    }
+
     &_designer {
         min-width: 200px;
+        width: 60%;
+
+        h1 {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 99;
+
+            &::after {
+                content: "";
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                display: block;
+                background-color: rgba(255, 247, 232, 0.8);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+
+            img {
+                scale: calc(0.8);
+            }
+        }
 
         //////______________デザイナー
         &_name {
             font-size: 30px;
             position: relative;
             padding: 20px;
+            z-index: 99;
 
 
             &::after {
@@ -434,12 +515,38 @@ img {
 
     &_camera {
         min-width: 200px;
+        width: 60%;
+
+        h1 {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 99;
+
+            &::after {
+                content: "";
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                display: block;
+                background-color: rgba(255, 247, 232, 0.8);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+
+
+        }
 
         //_____________カメラマン
         &_name {
             font-size: 30px;
             position: relative;
             padding: 20px;
+            z-index: 99;
 
             &::after {
                 ///_____________経歴部分
@@ -458,7 +565,10 @@ img {
 
 @media(max-width:1200px) {
     .other {
-        margin-top: 600px;
+
+        &_subtitle {
+            margin-top: 300px;
+        }
     }
 }
 
@@ -467,6 +577,11 @@ img {
         column-gap: 0;
 
         &_designer {
+            h1 {
+                width: 200px;
+                height: 200px;
+            }
+
             &_name {
                 font-size: 16px;
             }
@@ -477,6 +592,11 @@ img {
         }
 
         &_camera {
+            h1 {
+                width: 200px;
+                height: 200px;
+            }
+
             &_name {
                 font-size: 16px;
             }
@@ -490,7 +610,18 @@ img {
 
 @media(max-width:600px) {
     .other {
-        margin-top: 300px;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+        margin-bottom: 300px;
+
+        &_designer {
+            margin: 0 auto;
+        }
+
+        &_camera {
+            margin: 0 auto;
+        }
     }
 }
 
@@ -498,7 +629,7 @@ img {
 .goods {
     max-width: 1200px;
     width: 80%;
-    margin: 200px auto;
+    margin: 100px auto;
     padding-left: 3%;
 
     &_title {
@@ -508,6 +639,17 @@ img {
         color: #A98058;
         margin-bottom: 50px;
         text-align: center;
+        position: relative;
+
+        &::after {
+            content: "グッズ";
+            position: absolute;
+            display: block;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
     }
 
     &_column {
@@ -533,7 +675,7 @@ img {
     }
 
     &_notice {
-        text-align: right;
+        text-align: center;
         margin-top: 30px;
         letter-spacing: 1px;
     }
@@ -542,6 +684,10 @@ img {
 @media(max-width:800px) {
     .goods {
         margin-top: 100px;
+
+        &_notice {
+            font-size: 12px;
+        }
 
         &_column {
             grid-template-columns: 1fr;
@@ -578,6 +724,17 @@ img {
         color: #A98058;
         margin-bottom: 50px;
         text-align: center;
+        position: relative;
+
+        &::after {
+            content: "イベント";
+            position: absolute;
+            display: block;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
     }
 
     &_item {
@@ -649,6 +806,7 @@ img {
 
         &_bullet {
             padding: 5% 0;
+            margin: 0 auto;
 
             span {
                 display: grid;
@@ -660,11 +818,22 @@ img {
 
     &_title {
         text-align: center;
+        position: relative;
+
+        &::after {
+            content: "アクセス";
+            position: absolute;
+            display: block;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
     }
 
     &_map {
 
-
+        margin: 0 auto;
 
         &_logo {
             display: grid;
@@ -678,7 +847,7 @@ img {
         }
 
         &_link {
-            margin: 0 auto;
+            margin: 40px auto;
             text-align: center;
             position: relative;
             display: block;
@@ -740,7 +909,7 @@ img {
         width: 500px;
         margin: 0 auto;
         padding: 0;
-        font-size: 12px;
+        font-size: 11px;
 
         &_main {
             grid-template-columns: 1fr;
@@ -777,5 +946,26 @@ img {
 @media(max-width:1000px) {
     .footer {
         margin-top: 60vh;
+    }
+}
+
+.current {
+    color: #ECB880;
+
+    &::before {
+        content: "お店について";
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        letter-spacing: 1px;
+        opacity: 1;
+        color: #ECB880;
+    }
+
+    &:hover::before {
+        animation: none;
     }
 }

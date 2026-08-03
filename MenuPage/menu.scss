@@ -22,6 +22,17 @@ img {
     color: #A98058;
     font-weight: bold;
     font-size: 40px;
+    position: relative;
+
+    &::after {
+        content: "メニュー";
+        position: absolute;
+        display: block;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+    }
 }
 
 
@@ -50,5 +61,26 @@ img {
         &_img {
             grid-template-columns: 1fr;
         }
+    }
+}
+
+.current {
+    color: #ECB880;
+
+    &::before {
+        content: "メニュー";
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        letter-spacing: 1px;
+        opacity: 1;
+        color: #ECB880;
+    }
+
+    &:hover::before {
+        animation: none;
     }
 }

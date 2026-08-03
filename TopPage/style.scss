@@ -270,6 +270,18 @@ img {
 
     &_text {
         max-width: 350px;
+        margin: 0 auto;
+        position: relative;
+
+        &::after {
+            content: "メニュー";
+            display: block;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #A98058
+        }
 
         a {
             max-width: 50px;
@@ -379,4 +391,21 @@ img {
 .header {
     top: 0;
     position: sticky;
+}
+
+.current {
+    color: #ECB880;
+
+    &::before {
+        content: "トップ";
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        letter-spacing: 1px;
+        opacity: 1;
+        color: #ECB880;
+    }
 }

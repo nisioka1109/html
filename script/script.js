@@ -88,22 +88,28 @@ gsap.from(
 
 
 //About２つ目
-gsap.from(
-    '.menu_photo, .menu_text > *',
-    {
-        y: 50, //50pxしたから上がってくる
-        opacity: 0,//透明な状態かいら開始
-        filter: 'blur(10px)',//１０pxぼやっとさせる
-        duration: 0.6,//アニメーションにかかる時間
-        stagger: 0.1,//各要素のアニメーションのずれ
-        scrollTrigger: {
-            trigger: '.menu',//トリガー
-            start: 'top 50%', // menuが画面の70%位置に来たら発火
-            toggleActions: 'play none none none',//一度だけ再生
-        }
+// 親全体
+gsap.from(".menu", {
+    opacity: 0,
+    y: 50,
+    duration: 0.6,
+    scrollTrigger: {
+        trigger: ".menu",
+        start: "top 50%",
     }
-);
+});
 
+// 子要素
+gsap.from(".menu_photo, .menu_text > *", {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.15,
+    scrollTrigger: {
+        trigger: ".menu",
+        start: "top 50%",
+    }
+});
 gsap.from(
     '.instagram_title, .instagram_photo_item, .instagram .btn',
     {

@@ -1,0 +1,173 @@
+.photogallery {
+    padding-top: 200px;
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+
+        &::after {
+            content: "フォトギャラリー";
+            position: absolute;
+            display: block;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+        }
+    }
+}
+
+.gallery {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    margin: 40px auto;
+
+    &_item {
+        width: calc(33.333% - 20px);
+        margin-bottom: 20px;
+
+        img {
+            display: block;
+            width: 100%;
+            transition: transform 0.7s ease;
+
+            &:hover {
+                transform: scale(0.95);
+            }
+        }
+    }
+}
+
+
+.photogallery_modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7); // 白の半透明
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &_content {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            max-height: 90vh;
+        }
+    }
+}
+
+.photogallery_modal {
+    z-index: 9999;
+
+    &_prev {
+        background-color: #FFF1D7;
+        border-radius: 50%;
+        border: none;
+        width: 70px;
+        height: 70px;
+        color: white;
+        margin-right: 30px;
+        font-size: 80px;
+        cursor: pointer;
+        padding: 20px;
+        position: relative;
+
+        &::after {
+            content: "⬅︎";
+            display: block;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #A98058;
+            font-size: 40px;
+        }
+    }
+
+    &_next {
+        background-color: #FFF1D7;
+        border-radius: 50%;
+        border: none;
+        width: 70px;
+        height: 70px;
+        color: white;
+        margin-left: 30px;
+        font-size: 80px;
+        cursor: pointer;
+        padding: 20px;
+        position: relative;
+
+        &::after {
+            content: "➡︎";
+            display: block;
+            position: absolute;
+            top: 25%;
+            left: 54%;
+            transform: translateX(-50%);
+            color: #A98058;
+            font-size: 40px;
+        }
+    }
+}
+
+@media(max-width:700px) {
+    .photogallery_modal {
+        &_prev {
+            width: 50px;
+            height: 50px;
+            font-size: 50px;
+
+            &::after {
+                font-size: 30px;
+                top: 15%;
+            }
+        }
+
+        &_next {
+            width: 50px;
+            height: 50px;
+            font-size: 50px;
+
+            &::after {
+                font-size: 30px;
+                top: 15%;
+            }
+        }
+    }
+}
+
+.current {
+    color: #ECB880;
+
+    &::before {
+        content: "フォトギャラリー";
+        display: block;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        letter-spacing: 1px;
+        opacity: 1;
+        color: #ECB880;
+    }
+
+    &:hover::before {
+        animation: none;
+    }
+}

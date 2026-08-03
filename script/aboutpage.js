@@ -68,7 +68,18 @@ gsap.from(".owner_text > *", {
     }
 });
 
-
+gsap.from(".other_subtitle, .other > *", {
+    y: 50,
+    opacity: 0,
+    filter: "blur(10px)",
+    duration: 0.6,
+    stagger: 0.2,
+    scrollTrigger: {
+        trigger: ".other",
+        start: "top 60%",
+        toggleActions: "play none none none",
+    }
+});
 gsap.from(
     '.other > section',
     {

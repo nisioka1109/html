@@ -21,11 +21,22 @@ img {
   color: #A98058;
   font-weight: bold;
   font-size: 40px;
+  text-align: center;
 }
 
 .aboutsubtitle {
   text-align: center;
   padding-top: 200px;
+  position: relative;
+}
+.aboutsubtitle::after {
+  content: "私たちについて";
+  position: absolute;
+  display: block;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
 }
 
 .about {
@@ -206,13 +217,15 @@ img {
   color: #A98058;
   margin-top: 100px;
   text-align: center;
+  line-height: 3rem;
 }
 .owner_text_name {
   position: relative;
   font-size: 45px;
   color: #000;
   z-index: 999;
-  margin-top: 50px;
+  margin: 50px 0;
+  width: 400px;
 }
 .owner_text_name::before {
   content: "Miyazaki　　Ayano";
@@ -234,17 +247,26 @@ img {
   max-width: 500px;
   width: 100%;
   margin-top: 50px;
+  margin: 50px 0;
 }
 
 @media (max-width: 1200px) {
   .owner_img {
     display: block;
-    margin: 30px 0;
+    margin: 30px auto;
     text-align: center;
+    width: 400px;
   }
   .owner_text {
     background: none;
     margin: 0 auto;
+    width: 400px;
+  }
+  .owner_text_name {
+    margin: 50px auto;
+  }
+  .owner_text_maintext {
+    margin: 50px auto;
   }
   .owner_text .subtitle {
     text-align: center;
@@ -259,26 +281,38 @@ img {
     display: block;
     margin: 30px 0;
     text-align: center;
+    width: 300px;
   }
   .owner_text {
     background: none;
   }
   .owner_text_name {
     font-size: 40px;
+    width: 400px;
+    margin: 50px 0;
   }
   .owner_text_name::before {
     margin-bottom: 10px;
   }
   .owner_text_maintext {
     font-size: 12px;
+    margin: 50px 0;
+    width: 400px;
   }
 }
 @media (max-width: 600px) {
   .owner {
     width: 50%;
   }
+  .owner_text {
+    width: 300px;
+  }
   .owner_text_name {
     font-size: 30px;
+    width: 300px;
+  }
+  .owner_text_maintext {
+    width: 300px;
   }
 }
 .other {
@@ -292,13 +326,50 @@ img {
   justify-content: center;
   text-align: center;
 }
+.other_subtitle {
+  position: relative;
+}
+.other_subtitle::after {
+  content: "ご協力いただいた皆様";
+  position: absolute;
+  display: block;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+}
 .other_designer {
   min-width: 200px;
+  width: 60%;
+}
+.other_designer h1 {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 99;
+}
+.other_designer h1::after {
+  content: "";
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: block;
+  background-color: rgba(255, 247, 232, 0.8);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.other_designer h1 img {
+  scale: 0.8;
 }
 .other_designer_name {
   font-size: 30px;
   position: relative;
   padding: 20px;
+  z-index: 99;
 }
 .other_designer_name::after {
   content: "デザイナー / 歴２年";
@@ -310,11 +381,33 @@ img {
 }
 .other_camera {
   min-width: 200px;
+  width: 60%;
+}
+.other_camera h1 {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 99;
+}
+.other_camera h1::after {
+  content: "";
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: block;
+  background-color: rgba(255, 247, 232, 0.8);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 .other_camera_name {
   font-size: 30px;
   position: relative;
   padding: 20px;
+  z-index: 99;
 }
 .other_camera_name::after {
   content: "デザイナー / 歴２年";
@@ -326,8 +419,8 @@ img {
 }
 
 @media (max-width: 1200px) {
-  .other {
-    margin-top: 600px;
+  .other_subtitle {
+    margin-top: 300px;
   }
 }
 @media (max-width: 750px) {
@@ -335,11 +428,19 @@ img {
     -moz-column-gap: 0;
          column-gap: 0;
   }
+  .other_designer h1 {
+    width: 200px;
+    height: 200px;
+  }
   .other_designer_name {
     font-size: 16px;
   }
   .other_designer::after {
     font-size: 10px;
+  }
+  .other_camera h1 {
+    width: 200px;
+    height: 200px;
   }
   .other_camera_name {
     font-size: 16px;
@@ -350,13 +451,22 @@ img {
 }
 @media (max-width: 600px) {
   .other {
-    margin-top: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    margin-bottom: 300px;
+  }
+  .other_designer {
+    margin: 0 auto;
+  }
+  .other_camera {
+    margin: 0 auto;
   }
 }
 .goods {
   max-width: 1200px;
   width: 80%;
-  margin: 200px auto;
+  margin: 100px auto;
   padding-left: 3%;
 }
 .goods_title {
@@ -365,6 +475,16 @@ img {
   color: #A98058;
   margin-bottom: 50px;
   text-align: center;
+  position: relative;
+}
+.goods_title::after {
+  content: "グッズ";
+  position: absolute;
+  display: block;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
 }
 .goods_column {
   display: grid;
@@ -382,7 +502,7 @@ img {
   margin-top: 20px;
 }
 .goods_notice {
-  text-align: right;
+  text-align: center;
   margin-top: 30px;
   letter-spacing: 1px;
 }
@@ -390,6 +510,9 @@ img {
 @media (max-width: 800px) {
   .goods {
     margin-top: 100px;
+  }
+  .goods_notice {
+    font-size: 12px;
   }
   .goods_column {
     grid-template-columns: 1fr;
@@ -419,6 +542,16 @@ img {
   color: #A98058;
   margin-bottom: 50px;
   text-align: center;
+  position: relative;
+}
+.events_title::after {
+  content: "イベント";
+  position: absolute;
+  display: block;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
 }
 .events_item {
   display: grid;
@@ -473,6 +606,7 @@ img {
 }
 .access_main_bullet {
   padding: 5% 0;
+  margin: 0 auto;
 }
 .access_main_bullet span {
   display: grid;
@@ -481,6 +615,19 @@ img {
 }
 .access_title {
   text-align: center;
+  position: relative;
+}
+.access_title::after {
+  content: "アクセス";
+  position: absolute;
+  display: block;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+}
+.access_map {
+  margin: 0 auto;
 }
 .access_map_logo {
   display: grid;
@@ -492,7 +639,7 @@ img {
   margin: 5px 10px;
 }
 .access_map_link {
-  margin: 0 auto;
+  margin: 40px auto;
   text-align: center;
   position: relative;
   display: block;
@@ -533,7 +680,7 @@ img {
     width: 500px;
     margin: 0 auto;
     padding: 0;
-    font-size: 12px;
+    font-size: 11px;
   }
   .access_main {
     grid-template-columns: 1fr;
@@ -559,5 +706,24 @@ img {
   .footer {
     margin-top: 60vh;
   }
+}
+.current {
+  color: #ECB880;
+}
+.current::before {
+  content: "お店について";
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 1;
+  color: #ECB880;
+}
+.current:hover::before {
+  -webkit-animation: none;
+          animation: none;
 }
 /*# sourceMappingURL=aboutshop.css.map */

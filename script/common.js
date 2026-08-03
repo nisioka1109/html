@@ -1,16 +1,25 @@
 const hamburger = document.querySelector('.hamburger');
 const menuText = document.querySelector('.hamburger_text');
+const modal = document.querySelector('.drawer');
+
 hamburger.addEventListener('click', () => {
+    // ハンバーガー
     hamburger.classList.toggle('active');
+
+    // ドロワーメニュー
+    modal.classList.toggle('active');
+
+    // MENU ⇔ CLOSE
     gsap.to(menuText, {
-        opacity: 0,      // 徐々に透明に
-        filter: 'blur(10px)', // ぼかす
+        opacity: 0,
+        filter: 'blur(10px)',
         duration: 0.2,
         onComplete: () => {
             menuText.textContent =
                 hamburger.classList.contains('active')
                     ? 'CLOSE'
-                    : 'MENU';
+                    : '';
+
             gsap.fromTo(
                 menuText,
                 {
@@ -27,6 +36,70 @@ hamburger.addEventListener('click', () => {
     });
 });
 
+// ESCキーで閉じる
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+
+        // ドロワーを閉じる
+        modal.classList.remove('active');
+
+        // ハンバーガーも元に戻す
+        hamburger.classList.remove('active');
+
+        // CLOSE → MENU
+        gsap.to(menuText, {
+            opacity: 0,
+            filter: 'blur(10px)',
+            duration: 0.2,
+            onComplete: () => {
+                gsap.fromTo(
+                    menuText,
+                    {
+                        opacity: 0,
+                        filter: 'blur(10px)'
+                    },
+                    {
+                        opacity: 1,
+                        filter: 'blur(0px)',
+                        duration: 0.3
+                    }
+                );
+            }
+        });
+    }
+});
+// ドロワーの外側をクリックしたら閉じる
+document.addEventListener('click', (e) => {
+    if (
+        modal.classList.contains('active') &&
+        !modal.contains(e.target) &&
+        !hamburger.contains(e.target)
+    ) {
+        modal.classList.remove('active');
+        hamburger.classList.remove('active');
+
+        gsap.to(menuText, {
+            opacity: 0,
+            filter: 'blur(10px)',
+            duration: 0.2,
+            onComplete: () => {
+
+                gsap.fromTo(
+                    menuText,
+                    {
+                        opacity: 0,
+                        filter: 'blur(10px)'
+                    },
+                    {
+                        opacity: 1,
+                        filter: 'blur(0px)',
+                        duration: 0.3
+                    }
+                );
+            }
+        });
+    }
+});
 
 
 const logoCount = 20; // 表示するイラストの枚数
@@ -64,3 +137,26 @@ for (let i = 0; i < logoCount; i++) {
     // bodyの一番最後に画像を追加
     document.body.appendChild(img);
 }
+
+//第一種動物取扱登録情報についてのやつ
+const animalBtn = document.querySelector('.footer_animal');
+const animalModal = document.querySelector('.animal_modal');
+
+animalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    animalModal.classList.add('active');
+});
+
+// 背景クリックで閉じる
+animalModal.addEventListener('click', (e) => {
+    if (e.target === animalModal) {
+        animalModal.classList.remove('active');
+    }
+});
+
+// ESCキーで閉じる
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        animalModal.classList.remove('active');
+    }
+});

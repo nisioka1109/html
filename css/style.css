@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #FFF7E8;
   line-height: 2em;
@@ -186,6 +187,17 @@ img {
 }
 .menu_text {
   max-width: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+.menu_text::after {
+  content: "メニュー";
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #A98058;
 }
 .menu_text a {
   max-width: 50px;
@@ -265,5 +277,21 @@ img {
   top: 0;
   position: -webkit-sticky;
   position: sticky;
+}
+
+.current {
+  color: #ECB880;
+}
+.current::before {
+  content: "トップ";
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 1;
+  color: #ECB880;
 }
 /*# sourceMappingURL=style.css.map */

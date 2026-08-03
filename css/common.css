@@ -4,6 +4,7 @@ body {
   font-family: "Zen Maru Gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: #2d1d16;
   line-height: 2em;
   letter-spacing: 0.2rem;
 }
@@ -44,7 +45,7 @@ img {
   width: 300px;
   height: 100px;
   margin-top: 50px;
-  z-index: 999;
+  z-index: 9995;
   overflow: hidden;
 }
 .btn_text {
@@ -105,7 +106,6 @@ img {
   max-width: 1500px;
   width: 80%;
   margin: 100px auto 0;
-  height: 50vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   line-height: 1.5rem;
@@ -168,10 +168,12 @@ img {
 }
 .footer_animal {
   font-size: 14px;
+  font-weight: bold;
 }
 .footer_copy {
   color: #A98058;
   text-align: center;
+  margin: 40px 0;
 }
 .footer a {
   position: relative;
@@ -206,10 +208,44 @@ img {
   transform: scale(1) rotate(0deg);
 }
 
+.animal_modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9999;
+}
+.animal_modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.animal_modal_content {
+  max-width: 90%;
+  max-height: 90%;
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+.animal_modal_content img {
+  display: block;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+}
+.animal_modal.active .animal_modal_content {
+  transform: scale(1);
+}
+
 @media (max-width: 900px) {
   .footer {
     grid-template-columns: 1fr;
-    row-gap: 10%;
+    row-gap: 40px;
   }
   .footer_logo h2 {
     max-height: 400px;
@@ -296,7 +332,7 @@ img {
   padding: 2%;
   display: grid;
   justify-content: center;
-  z-index: 9997;
+  z-index: 9996;
 }
 .header h1 {
   width: 60px;
@@ -305,31 +341,22 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 100px;
-       column-gap: 100px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 .header li {
   list-style: none;
+  position: relative;
 }
 .header a {
   position: relative;
   display: inline-block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #333;
   transition: color 0.3s;
   font-size: 20px;
   /* // ボーダー */
   /* // ロゴ */
-}
-.header a::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-bottom: 2px solid #ECB880;
-  transform: scale(0.8);
-  opacity: 0;
-  transition: 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
 }
 .header a::after {
   content: "";
@@ -347,15 +374,120 @@ img {
 .header a:hover {
   color: #ECB880;
 }
-.header a:hover::before {
-  opacity: 1;
-  transform: scale(1);
-}
 .header a:hover::after {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
+.header_top::before {
+  content: "トップ";
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.header_top:hover::before {
+  -webkit-animation: jap 0.5s ease forwards;
+          animation: jap 0.5s ease forwards;
+  opacity: 1;
+}
+.header_about::before {
+  content: "お店について";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.header_about:hover::before {
+  -webkit-animation: jap 0.5s ease forwards;
+          animation: jap 0.5s ease forwards;
+  opacity: 1;
+}
+.header_menu::before {
+  content: "メニュー";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.header_menu:hover::before {
+  -webkit-animation: jap 0.5s ease forwards;
+          animation: jap 0.5s ease forwards;
+  opacity: 1;
+}
+.header_reservation::before {
+  content: "予約について";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.header_reservation:hover::before {
+  -webkit-animation: jap 0.5s ease forwards;
+          animation: jap 0.5s ease forwards;
+  opacity: 1;
+}
+.header_gallery::before {
+  content: "フォトギャラリー";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.header_gallery:hover::before {
+  -webkit-animation: jap 0.5s ease forwards;
+          animation: jap 0.5s ease forwards;
+  opacity: 1;
+}
 
+@-webkit-keyframes jap {
+  0% {
+    opacity: 0;
+    bottom: 0px;
+  }
+  100% {
+    opacity: 1;
+    bottom: -15px;
+  }
+}
+
+@keyframes jap {
+  0% {
+    opacity: 0;
+    bottom: 0px;
+  }
+  100% {
+    opacity: 1;
+    bottom: -15px;
+  }
+}
 @media (max-width: 700px) {
   .header {
     display: none;
@@ -363,48 +495,151 @@ img {
 }
 .floating {
   position: fixed;
-  width: 200px;
-  height: 300px;
   top: 100px;
   right: 0px;
-  z-index: 9998;
+  z-index: 9997;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .floating_line {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 99;
+  height: 50px;
+  width: 50px;
+  border: solid 1px #A98058;
 }
-.floating_line img {
-  width: 100px;
-  rotate: -20deg;
-}
-.floating_line img:hover {
-  scale: 1.1;
-}
-.floating_tel {
-  position: absolute;
-  top: 100px;
-  right: 0px;
-}
-.floating_tel img {
-  width: 70px;
-  rotate: 20deg;
-  z-index: 98;
-}
-.floating_tel img:hover {
-  scale: 1.1;
+.floating_insta {
+  height: 50px;
+  width: 50px;
+  border: solid 1px #A98058;
+  border-top: none;
 }
 
-@media (max-width: 500px) {
-  .floating_line img {
-    width: 70px;
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -120%;
+  width: 350px;
+  height: 50vh;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 0.5s ease;
+  z-index: 9998;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.drawer ul {
+  list-style: none;
+  text-align: center;
+  margin-left: 30px;
+  display: grid;
+  row-gap: 30px;
+}
+.drawer li {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.drawer_top::before {
+  content: "ートップ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -80px;
+  font-size: 12px;
+}
+.drawer_about::before {
+  content: "ーお店について";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -130px;
+  font-size: 12px;
+}
+.drawer_menu::before {
+  content: "ーメニュー";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -80px;
+  font-size: 12px;
+}
+.drawer_reservation::before {
+  content: "ー予約について";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -120px;
+  font-size: 12px;
+}
+.drawer_gallery::before {
+  content: "ーフォトギャラリー";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -150px;
+  font-size: 12px;
+}
+.drawer a {
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+.drawer a:hover {
+  color: #ECB880;
+}
+
+.drawer.active {
+  right: 0;
+}
+
+.banner {
+  padding: 15%;
+}
+.banner h2 {
+  text-align: center;
+}
+.banner h2:hover {
+  -webkit-animation: hover 1s;
+          animation: hover 1s;
+  scale: 0.95;
+}
+@-webkit-keyframes hover {
+  0% {
+    transform: scale(1);
   }
-  .floating_tel {
-    top: 80px;
+  30% {
+    transform: scale(0.95);
   }
-  .floating_tel img {
-    width: 50px;
+}
+@keyframes hover {
+  0% {
+    transform: scale(1);
   }
+  30% {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 1500px) {
+  .banner {
+    padding: 5% 30%;
+  }
+}
+@media (max-width: 900px) {
+  .banner {
+    padding: 5% 20%;
+  }
+}
+@media (max-width: 700px) {
+  .banner {
+    margin-top: 50px;
+    padding: 5% 15%;
+  }
+}
+.current2 {
+  color: #ECB880;
 }
 /*# sourceMappingURL=common.css.map */
