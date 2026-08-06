@@ -46,6 +46,10 @@
   -moz-column-gap: 15%;
        column-gap: 15%;
 }
+.reservation_btn a {
+  width: 300px;
+  margin: 0 auto;
+}
 
 @media (max-width: 700px) {
   .reservation_btn {
@@ -60,6 +64,9 @@
   margin-left: 30px;
 }
 
+.btn {
+  margin: 0 auto;
+}
 .btn_lineicon::after {
   content: "";
   display: block;
@@ -103,6 +110,7 @@
 }
 .policy ul li {
   padding-left: 20px;
+  line-height: 2rem;
 }
 
 .current {

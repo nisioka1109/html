@@ -37,50 +37,92 @@ img {
   opacity: 0;
 }
 
-.topbackground {
-  background-color: rgb(255, 247, 232);
-}
-
 .mainvisual {
-  position: relative;
   height: 100vh;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.mainvisual_top {
-  display: grid;
-  grid-template-columns: 2fr 5fr;
-  height: 60vh;
-}
-.mainvisual_top_img {
-  background: url(../images/mainvisual.jpg) no-repeat center center/cover;
-  margin: 10%;
-}
-.mainvisual_top_logo {
-  margin: 40% 10% 30% 30%;
-  line-height: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.mainvisual_top_logo h1 {
-  scale: 0.9;
-}
-.mainvisual_bottom {
-  height: 50vh;
-  display: grid;
-}
-.mainvisual_bottom_shopname {
-  margin: 30%;
-  font-size: 20px;
-  color: #2d1d16;
   position: relative;
 }
-.mainvisual_bottom_img {
-  background: url(../images/mainivisual2.jpg) no-repeat center center/cover;
-  margin: 0% 15% 15% 5%;
+.mainvisual section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.mainvisual_photo {
+  height: 80vh;
+  width: 70%;
+  max-width: 600px;
+  background: url(../images/photo15.jpg) no-repeat center center/cover;
+  position: relative;
+}
+.mainvisual_photo::after {
+  content: "inunobiyousitucocon";
+  position: absolute;
+  display: block;
+  right: -250px;
+  top: 400px;
+  letter-spacing: 1rem;
+  transform: rotate(90deg);
+}
+.mainvisual_photo::before {
+  content: "Grooming Salon";
+  display: block;
+  font-family: "Dynalight", cursive;
+  position: absolute;
+  max-width: 400px;
+  line-height: 3rem;
+  text-align: right;
+  top: 20%;
+  right: -40%;
+  font-size: 70px;
+  color: #A98058;
+  z-index: 9993;
+  transform: rotate(350deg);
+}
+.mainvisual_photo2 {
+  height: 50vh;
+  width: 50%;
+  max-width: 300px;
+  background: url(../images/photo5.jpg) no-repeat center center/cover;
+  margin: 40vh auto;
+  position: relative;
+}
+.mainvisual_photo2::after {
+  content: "inunobiyousitucocon";
+  position: absolute;
+  display: block;
+  left: -250px;
+  top: 200px;
+  letter-spacing: 1rem;
+  transform: rotate(90deg);
+}
+.mainvisual_photo3 {
+  height: 20vh;
+  width: 60%;
+  max-width: 600px;
+  background: url(../images/photo11.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
+@media (max-width: 900px) {
+  .mainvisual_photo3 {
+    height: 10vh;
+  }
+}
+@media (max-width: 600px) {
+  .mainvisual_photo {
+    background: url(../images/photo15.jpg) no-repeat 40% center/cover;
+  }
+  .mainvisual_photo::before {
+    font-size: 50px;
+  }
+  .mainvisual_photo2 {
+    margin: 40vh 0;
+    width: 80%;
+  }
+  .mainvisual_photo2::after {
+    content: none;
+  }
+}
 .about {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: grid;

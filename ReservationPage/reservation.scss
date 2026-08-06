@@ -51,6 +51,11 @@
         grid-template-columns: 1fr 1fr;
         justify-content: center;
         column-gap: 15%;
+
+        a {
+            width: 300px;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -71,6 +76,8 @@
 }
 
 .btn {
+    margin: 0 auto;
+
     &_lineicon {
         &::after {
             content: "";
@@ -127,6 +134,7 @@
 
         li {
             padding-left: 20px;
+            line-height: 2rem;
         }
     }
 }

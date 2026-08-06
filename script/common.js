@@ -160,3 +160,23 @@ document.addEventListener('keydown', (e) => {
         animalModal.classList.remove('active');
     }
 });
+
+const cursor = document.querySelector(".cursor");
+
+window.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+
+
+gsap.from(".banner h2", {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".banner",
+        start: "top 60%", // bannerの上端が画面の60%の位置に来たら開始
+        toggleActions: "play none none none",
+    }
+});

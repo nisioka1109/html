@@ -236,7 +236,7 @@ img {
   margin-left: 5px;
 }
 .owner_text_name::after {
-  content: "トリマー / 歴２年";
+  content: "トリマー";
   display: block;
   text-align: left;
   font-size: 15px;
@@ -372,7 +372,7 @@ img {
   z-index: 99;
 }
 .other_designer_name::after {
-  content: "デザイナー / 歴２年";
+  content: "イラストレーター";
   display: block;
   position: absolute;
   font-size: 12px;
@@ -382,6 +382,11 @@ img {
 .other_camera {
   min-width: 200px;
   width: 60%;
+}
+.other_camera article {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  align-items: center;
 }
 .other_camera h1 {
   width: 300px;
@@ -410,7 +415,7 @@ img {
   z-index: 99;
 }
 .other_camera_name::after {
-  content: "デザイナー / 歴２年";
+  content: "カメラマン";
   display: block;
   position: absolute;
   font-size: 12px;

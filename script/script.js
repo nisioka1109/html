@@ -55,20 +55,6 @@ window.addEventListener('load', () => {
 
 
 
-
-
-
-gsap.to(".topbackground", {
-    backgroundColor: "rgba(255, 248, 242, 0)",
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".mainvisual",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-    }
-});
-
 //About１つ目
 gsap.from(
     '.about .about_text > *, .about_photo',

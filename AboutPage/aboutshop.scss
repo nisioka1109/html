@@ -330,7 +330,7 @@ img {
 
             &::after {
                 // ＿＿＿＿＿＿＿＿＿オーナーさんの右下の経歴部分
-                content: "トリマー / 歴２年";
+                content: "トリマー";
                 display: block;
                 text-align: left;
                 font-size: 15px;
@@ -497,10 +497,9 @@ img {
             padding: 20px;
             z-index: 99;
 
-
             &::after {
                 //__________経歴部分
-                content: "デザイナー / 歴２年";
+                content: "イラストレーター";
                 display: block;
                 position: absolute;
                 font-size: 12px;
@@ -516,6 +515,12 @@ img {
     &_camera {
         min-width: 200px;
         width: 60%;
+
+        article {
+            display: grid;
+            grid-template-columns: 7fr 1fr;
+            align-items: center;
+        }
 
         h1 {
             width: 300px;
@@ -548,9 +553,11 @@ img {
             padding: 20px;
             z-index: 99;
 
+
+
             &::after {
                 ///_____________経歴部分
-                content: "デザイナー / 歴２年";
+                content: "カメラマン";
                 display: block;
                 position: absolute;
                 font-size: 12px;

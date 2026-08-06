@@ -50,69 +50,106 @@ img {
 
 //_______________________トップページ__________________________
 
-.topbackground {
-    background-color: rgba(255, 247, 232, 1);
-}
-
 .mainvisual {
-    position: relative;
     height: 100vh;
-    max-width: 1300px;
-    margin: 0 auto;
+    position: relative;
 
-
-    &_top {
+    section {
         display: grid;
-        grid-template-columns: 2fr 5fr;
-        height: 60vh;
+        grid-template-columns: 1fr 1fr;
+    }
 
-        &_img {
-            background: url(../images/mainvisual.jpg)no-repeat center center/cover;
-            margin: 10%;
+    &_photo {
+        height: 80vh;
+        width: 70%;
+        max-width: 600px;
+        background: url(../images/photo15.jpg)no-repeat center center/cover;
+        position: relative;
+
+        &::after {
+            content: "inunobiyousitucocon";
+
+            position: absolute;
+            display: block;
+            right: -250px;
+            top: 400px;
+            letter-spacing: 1rem;
+            transform: rotate(90deg);
         }
 
-        &_logo {
-            margin: 40% 10% 30% 30%;
-            line-height: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            h1 {
-                scale: calc(0.9);
-
-            }
-
-
+        &::before {
+            content: "Grooming Salon";
+            display: block;
+            font-family: "Dynalight", cursive;
+            position: absolute;
+            max-width: 400px;
+            line-height: 3rem;
+            text-align: right;
+            top: 20%;
+            right: -40%;
+            font-size: 70px;
+            color: #A98058;
+            z-index: 9993;
+            transform: rotate(350deg);
         }
     }
 
-    &_bottom {
+    &_photo2 {
         height: 50vh;
-        display: grid;
+        width: 50%;
+        max-width: 300px;
+        background: url(../images/photo5.jpg)no-repeat center center/cover;
+        margin: 40vh auto;
+        position: relative;
 
+        &::after {
+            content: "inunobiyousitucocon";
+            position: absolute;
+            display: block;
+            left: -250px;
+            top: 200px;
+            letter-spacing: 1rem;
+            transform: rotate(90deg);
+        }
+    }
 
-        &_shopname {
-            margin: 30%;
-            font-size: 20px;
-            color: #2d1d16;
-            position: relative;
+    &_photo3 {
+        height: 20vh;
+        width: 60%;
+        max-width: 600px;
+        background: url(../images/photo11.jpg)no-repeat center center/cover;
 
-            // &::after {
-            //     content: "";
-            //     display: block;
-            //     position: absolute;
-            //     top: 48px;
-            //     left: -70px;
-            //     border: solid 1px #2d1d16;
-            //     width: 90px;
-            //     transform: rotate(90deg);
-            // }
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media(max-width:900px) {
+    .mainvisual {
+        &_photo3 {
+            height: 10vh;
+        }
+    }
+}
+
+@media(max-width:600px) {
+    .mainvisual {
+        &_photo {
+            background: url(../images/photo15.jpg)no-repeat 40% center/cover;
+
+            &::before {
+                font-size: 50px;
+            }
         }
 
-        &_img {
-            background: url(../images/mainivisual2.jpg)no-repeat center center/cover;
-            margin: 0% 15% 15% 5%;
+        &_photo2 {
+            margin: 40vh 0;
+            width: 80%;
+
+            &::after {
+                content: none;
+            }
         }
     }
 }
